@@ -1,0 +1,28 @@
+Mail
+interface  : (Angular)
+entities+persistence : (jpa + hibernate)
+controllers : (REST)
+git :
+log : slf4j
+maven :
+Methodologie de test : TDD Test Driven Development
+bootstrap
+
+monitoring(la surveillance de l'etat du serveur) :spring actuators
+
+
+
+Liens
+-----
+https://spring.io/understanding/REST
+
+
+http://blog.aneo.eu/spring-boot/
+
+
+GIT
+---
+1 - git clone https://github.com/spring-projects/spring-boot  ==> /spring-boot
+2 - git status (modifications)
+3 - git commit -am "XXXXXXXXXXX"
+2 - git push branch-name repo
