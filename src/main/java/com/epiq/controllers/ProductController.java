@@ -45,7 +45,7 @@ public class ProductController {
 
     }
 
-    @RequestMapping(value = "/all",
+    @RequestMapping(value = "/products",
             method = RequestMethod.GET,
             consumes = MediaType.APPLICATION_JSON_VALUE,
             produces = MediaType.APPLICATION_JSON_VALUE)
