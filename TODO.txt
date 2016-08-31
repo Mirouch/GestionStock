@@ -26,3 +26,4 @@ GIT
 2 - git status (modifications)
 3 - git commit -am "XXXXXXXXXXX"
 2 - git push branch-name repo
+
