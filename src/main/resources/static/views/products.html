@@ -1,15 +1,18 @@
-<div class="section">
+  <div class="section">
     <h3>{{headingTitle}}</h3>
 
     <table>
         <tr>
-            <th>Name</th>
-            <th>id</th>
+            <th>ID</th>
+            <th>Nom du produit</th>
+            <th>TAG</th>
         </tr>
 
-        <tr ng-repeat = "product in products">
-            <td>{{ product.nom }}</td>
+        <tr ng-repeat = "product in products.data">
             <td><a href="#/product/{{ product.id }}">{{ product.id }}</a></td>
+            <td>{{ product.nom }}</td>
+            <td>{{product.tag}}</td>
+
         </tr>
     </table>
 </div>

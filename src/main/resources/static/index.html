@@ -13,21 +13,52 @@
     <title>Gestion De Stock</title>
     <meta name="description" content="">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" href="/css/app.css">
+    <!-- <link rel="stylesheet" href="/css/app.css"> -->
 </head>
-<body>
-<h2>Administrator Panel</h2>
+<body ng-app="app">
+
+<h2>GESTION DE STOCK</h2>
 <div class="home-section">
-    <ul class="menu-list">
+    <ul>
         <li><a href="#/products">products</a></li>
+
     </ul>
+
+
+    <div ng-controller="productsController"> </div>
+
+    <div ng-controller="addProductController">
+
+
+
+
+  <form ng-submit="addProduct()">
+        <fieldset>
+            <label for="nom">Nom du produit :</label></br>
+            <input id="nom" type="text" ng-model="nom"></br>
+            <label for="tag">Tag :</label></br>
+            <input id="tag" type="int" ng-model="tag"></br>
+            <label for="dateEntree">Date d'entrée :</label></br>
+            <input id="dateEntree" type="date" ng-model="dateEntree"></br>
+            <label for="prixAchat">Prix d'achat</label></br>
+            <input id="prixAchat" type="double" ng-model="prixAchat"></br>
+            <button type="submit" id="submit">Ajouter</button>
+        </fieldset>
+    </form>
+    </div>
+
+    <!--<button ng-click="updateProduct">Modifier</button>
+    <button ng-click="deleteProduct">Supprimer</button> -->
+
 </div>
+
 <div ng-view></div>
 <script src="/webjars/angularjs/1.4.9/angular.js"></script>
 <script src="/webjars/angularjs/1.4.9/angular-resource.js"></script>
 <script src="/webjars/angularjs/1.4.9/angular-route.js"></script>
 <script src="/js/app.js"></script>
 <script src="/js/controller.js"></script>
-<link rel="stylesheet" href="/webjars/bootstrap/3.3.6/css/bootstrap.css">
+<script src="/js/factories.js"></script>
+<!-- <link rel="stylesheet" href="/webjars/bootstrap/3.3.6/css/bootstrap.css"> -->
 </body>
 </html>

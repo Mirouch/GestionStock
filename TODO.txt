@@ -7,7 +7,6 @@ log : slf4j
 maven :
 Methodologie de test : TDD Test Driven Development
 bootstrap
-
 monitoring(la surveillance de l'etat du serveur) :spring actuators
 
 
