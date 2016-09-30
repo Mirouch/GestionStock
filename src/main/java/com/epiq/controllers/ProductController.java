@@ -7,6 +7,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.MediaType;
 import org.springframework.web.bind.annotation.*;
 
+import java.util.Date;
 import java.util.List;
 
 
@@ -17,7 +18,7 @@ public class ProductController {
     private IProductRepository productRepository;
 
 
-    @RequestMapping(value = "/products",
+   /* @RequestMapping(value = "/products",
             method = RequestMethod.POST,
             consumes = MediaType.APPLICATION_JSON_VALUE,
             produces = MediaType.APPLICATION_JSON_VALUE)
@@ -25,8 +26,18 @@ public class ProductController {
         productRepository.save(p);
         return p;
     }
+    */
+   @RequestMapping(value = "/products", method = RequestMethod.POST,headers="Accept=application/json")
 
-    @RequestMapping(value = "/products/{id}",
+   public Product add(@RequestBody Product p) {
+       System.out.println("erreur");
+       productRepository.save(p);
+       return p;
+   }
+
+
+
+   @RequestMapping(value = "/products/{id}",
             method = RequestMethod.PUT,
             consumes = MediaType.APPLICATION_JSON_VALUE,
             produces = MediaType.APPLICATION_JSON_VALUE)
@@ -45,7 +56,7 @@ public class ProductController {
 
     }
 
-    @RequestMapping(value = "/products",
+    /* @RequestMapping(value = "/products",
             method = RequestMethod.GET,
             consumes = MediaType.APPLICATION_JSON_VALUE,
             produces = MediaType.APPLICATION_JSON_VALUE)
@@ -53,6 +64,15 @@ public class ProductController {
         return productRepository.findAll();
 
     }
+    */
+
+    @RequestMapping(value = "/products", method = RequestMethod.GET,headers="Accept=application/json")
+    public List<Product> listProduct() {
+        return productRepository.findAll();
+
+    }
+
+
 
 
     @RequestMapping(value = "/products/{id}",
@@ -63,10 +83,16 @@ public class ProductController {
         productRepository.delete(id);
 
 
-    }
+    }}
 
+    /*@RequestMapping(value = "/products/{dateEntree}{dateSortie}",
+                    method = RequestMethod.Get,
+                    consumes = MediaType.APPLICATION_JSON_VALUE,
+                    produces = MediaType.APPLICATION_JSON_VALUE)
+    public List<Product>(@PathVariable("id")  Date dateEntree, Date dateSortie) {
+        productRepository.findProductByDates(dateEntree,dateSortie);
 
 }
-
+*/
 
 

@@ -23,8 +23,8 @@ public class GestionnaireController {
             consumes = MediaType.APPLICATION_JSON_VALUE,
             produces = MediaType.APPLICATION_JSON_VALUE)
     public Gestionnaire add(@RequestBody Gestionnaire gestionnaire){
-        gestionnaireRepository.save(gestionnaire);
-        return gestionnaire;
+       gestionnaireRepository.save(gestionnaire);
+       return gestionnaire;
     }
 
     @RequestMapping(value="/gestionnaires/{id}",

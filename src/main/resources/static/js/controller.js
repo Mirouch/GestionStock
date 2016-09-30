@@ -1,26 +1,38 @@
-app.controller('productsController', function($scope, $http, productsRetriever) {
-
-    productsRetriever
-        .getAllProducts()
-        .then(function(data) {
-            $scope.products = data;
-        })
-        .catch(function(message) {
-            console.log(message);
-        })
-
-
+app.controller('productsController', function($scope, $http) {
     $scope.headingTitle = "Product List";
 
-    $http({
+    $http.get('http://localhost:8080/products').
+
+    success(function (returnedData) {
+
+        $scope.products = returnedData;
+
+    }).
+    error(function (returnedData) {
+
+        alert("!hello")
+
+    });
+
+
+    /* $http({
         method: 'GET',
         headers: { 'Content-Type': 'application/json; charset=UTF-8'},
         data: '',
         url: 'http://localhost:8080/products'
-    }).
-    success(function(data) {
-        $scope.products = data;
-    });
+    })
+
+
+        .success(function(data) {
+            $scope.products = data;
+        })
+
+        .error(function(data) {
+           alert("!hello")
+        })
+*/
+
+
 
 
 });
@@ -28,7 +40,6 @@ app.controller('productsController', function($scope, $http, productsRetriever) 
 
 app.controller('productController', function($scope, $http, $routeParams) {
     $scope.headingTitle = "Product List";
-
     $http({
         method: 'GET',
         headers: {'Content-Type': 'application/json; charset=UTF-8'},
@@ -40,6 +51,37 @@ app.controller('productController', function($scope, $http, $routeParams) {
 });
 
 
+
+
+app.controller('addProductController',function ($scope,productService) {
+    $scope.addProduct = function ()
+    {
+        productService.addProductToDB($scope.product);
+    }
+
+}).factory("productService",['$http',function ($http) {
+    var fac ={};
+    fac.addProductToDB = function (product) {
+
+        $http.post("/products",product).success(function (response) {
+            alert(response.status);
+        })
+    }
+
+    return fac;
+    
+}])
+
+
+
+
+
+
+
+
+
+///////////// keep it
+/*
 app.controller('addProductController', function($scope, $http) {
     $scope.headingTitle = "Product List";
 
@@ -62,6 +104,18 @@ app.controller('addProductController', function($scope, $http) {
     }
 
 });
+
+*/
+
+
+
+
+
+
+
+
+
+
 
   /*  $scope.addProduct=function() {
         $http.post("insert.php", {

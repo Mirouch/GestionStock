@@ -22,8 +22,8 @@ public class ClientController {
             consumes = MediaType.APPLICATION_JSON_VALUE,
             produces = MediaType.APPLICATION_JSON_VALUE)
     public Client add(@RequestBody Client client){
-        clientRepository.save(client);
-        return client;
+         clientRepository.save(client);
+         return client;
     }
 
 

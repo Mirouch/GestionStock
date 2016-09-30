@@ -2,13 +2,18 @@ package com.epiq.persistence.respositories;
 
 import com.epiq.persistence.entities.Product;
 import org.springframework.data.jpa.repository.JpaRepository;
+import org.springframework.data.jpa.repository.Query;
 import org.springframework.stereotype.Repository;
 
-
+import java.util.Date;
+import java.util.List;
 
 
 @Repository
 public interface IProductRepository extends JpaRepository<Product,Long>{
+
+   /* @Query("SELECT p FROM  Product P WHERE :theDate between p.dateEntree and p.dateSortie")
+        List<Product> findProductByDates(Date  theDate);  */
 
     }
 

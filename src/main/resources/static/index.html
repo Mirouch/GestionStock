@@ -27,13 +27,32 @@
 
     <div ng-controller="productsController"> </div>
 
+
     <div ng-controller="addProductController">
+       <form name="addProductForm" ng-submit="addProduct();">
+         <table>
+           <tr>
+              <td>Nom du Produit</td>
+              <td> <input type="text" ng-model="product.nom" required/></td>
+           </tr>
+           <tr>
+              <td>Tag</td>
+              <td> <input type="number" ng-model="product.tag" required/></td>
+           </tr>
+           <tr>
+              <td>Date d'entrée</td>
+              <td> <input type="date" ng-model="product.dateEntree" required/></td>
+           </tr>
+           <tr>
+              <td>Prix d'achat</td>
+              <td> <input type="number" ng-model="product.prixAchat" required/></td>
+           </tr>
+           <tr>
+              <td colspan="2"> <input type="submit" value="Ajouter" ng-disabled="addProductForm.$invalid"></td>
+           </tr>
+         </table>
 
-
-
-
-  <form ng-submit="addProduct()">
-        <fieldset>
+     <!-- <fieldset>
             <label for="nom">Nom du produit :</label></br>
             <input id="nom" type="text" ng-model="nom"></br>
             <label for="tag">Tag :</label></br>
@@ -43,8 +62,8 @@
             <label for="prixAchat">Prix d'achat</label></br>
             <input id="prixAchat" type="double" ng-model="prixAchat"></br>
             <button type="submit" id="submit">Ajouter</button>
-        </fieldset>
-    </form>
+        </fieldset> -->
+     </form>
     </div>
 
     <!--<button ng-click="updateProduct">Modifier</button>
@@ -58,7 +77,6 @@
 <script src="/webjars/angularjs/1.4.9/angular-route.js"></script>
 <script src="/js/app.js"></script>
 <script src="/js/controller.js"></script>
-<script src="/js/factories.js"></script>
 <!-- <link rel="stylesheet" href="/webjars/bootstrap/3.3.6/css/bootstrap.css"> -->
 </body>
 </html>
