@@ -56,22 +56,22 @@ public class ProductController {
 
     }
 
-    /* @RequestMapping(value = "/products",
+    @RequestMapping(value = "/products",
             method = RequestMethod.GET,
-            consumes = MediaType.APPLICATION_JSON_VALUE,
             produces = MediaType.APPLICATION_JSON_VALUE)
     public List<Product> listProduct() {
         return productRepository.findAll();
 
     }
-    */
 
-    @RequestMapping(value = "/products", method = RequestMethod.GET,headers="Accept=application/json")
+
+   /*
+   @RequestMapping(value = "/products", method = RequestMethod.GET,headers="Accept=application/json")
     public List<Product> listProduct() {
         return productRepository.findAll();
 
     }
-
+   */
 
 
 
@@ -85,14 +85,15 @@ public class ProductController {
 
     }}
 
-    /*@RequestMapping(value = "/products/{dateEntree}{dateSortie}",
+    /*
+    @RequestMapping(value = "/products/{dateEntree}{dateSortie}",
                     method = RequestMethod.Get,
                     consumes = MediaType.APPLICATION_JSON_VALUE,
                     produces = MediaType.APPLICATION_JSON_VALUE)
     public List<Product>(@PathVariable("id")  Date dateEntree, Date dateSortie) {
         productRepository.findProductByDates(dateEntree,dateSortie);
 
-}
-*/
+   }
+    */
 
 

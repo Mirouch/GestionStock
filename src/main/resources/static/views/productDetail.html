@@ -1,0 +1,61 @@
+<div>
+    <table>
+        <tr>
+            <th>ID</th>
+            <th>Nom de produit</th>
+            <th>TAG</th>
+            <th>Référence</th>
+            <th>Désignation</th>
+            <th>Prix d'achat</th>
+            <th>Prix de vente</th>
+            <th>Quantité physique</th>
+            <th>Quantité théorique</th>
+            <th>Quantité d'alerte</th>
+            <th>Quantité réapprivisionnée</th>
+            <th>Localisation</th>
+            <th>Emplacement</th>
+            <th>Date d'entrée</th>
+            <th>Date de sortie</th>
+        </tr>
+
+        <tr ng-repeat = "product in products">
+            <a href="#/product/{{ product.id }}">{{ product.id }}</a>
+            <td>{{product.id}}</td>
+            <td>{{product.nom}}</td>
+            <td>{{product.tag}}</td>
+            <td>{{product.reference}}</td>
+            <td>{{product.designation}}</td>
+            <td>{{product.prixAchat}}</td>
+            <td>{{product.prixVente}}</td>
+            <td>{{product.quantitePhysique}}</td>
+            <td>{{product.quantiteTheorique}}</td>
+            <td>{{product.quantiteAlerte}}</td>
+            <td>{{product.quantiteReapprovisionnement}}</td>
+            <td>{{product.localisation}}</td>
+            <td>{{product.emplacement}}</td>
+            <td>{{product.dateEntree}}</td>
+            <td>{{product.dateSortie}}</td>
+        </tr>
+    </table>
+</div>
+
+-----------------------------------------------------------------------------
+<h1>{{product.nom}}</h1>
+<ul>
+    <li>ID du produit: {{product.id}}</li>
+    <li>Nom du produit: {{product.nom}}</li>
+    <li>Tag: {{product.tag | number}}</li>
+    <li>Référence: {{product.reference}}</li>
+    <li>Désignation: {{product.designation}}</li>
+    <li>Prix d'achat: {{product.prixAchat}}</li>
+    <li>Prix de vente: {{product.prixVente}}</li>
+    <li>Quantité physique: {{product.quantitePhysique | number}}</li>
+    <li>Quantité théorique: {{product.quantiteTheorique | number}}</li>
+    <li>Quantité d'alerte: {{product.quantiteAlerte | number}}</li>
+    <li>Quantité réapprovisionnée: {{product.quantiteReapprovisionnement | number}}</li>
+    <li>Localisation: {{product.localisation}}</li>
+    <li>Emplacement: {{product.emplacement}}</li>
+    <li>Date d'entrée: {{product.dateEntree}}</li>
+    <li>Date de sortie: {{product.dateSortie}}</li>
+
+</ul>

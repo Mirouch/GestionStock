@@ -1,82 +1,52 @@
 <!DOCTYPE html>
-
-<!--[if lt IE 7]>      <html lang="en" ng-app="app" class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
-
-<!--[if IE 7]>         <html lang="en" ng-app="app" class="no-js lt-ie9 lt-ie8"> <![endif]-->
-
-<!--[if IE 8]>         <html lang="en" ng-app="app" class="no-js lt-ie9"> <![endif]-->
-
-<!--[if gt IE 8]><!--> <html lang="en" ng-app="app" class="no-js"> <!--<![endif]-->
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="fr" lang="fr">
 <head>
+    <meta http-equiv="content-type" content="text/html"; charset="utf-8">
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
+
     <title>Gestion De Stock</title>
-    <meta name="description" content="">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <!-- <link rel="stylesheet" href="/css/app.css"> -->
+    <!-- Bootstrap -->
+    <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+
 </head>
-<body ng-app="app">
-
-<h2>GESTION DE STOCK</h2>
-<div class="home-section">
-    <ul>
-        <li><a href="#/products">products</a></li>
-
-    </ul>
 
 
-    <div ng-controller="productsController"> </div>
+<body ng-app="app" ng-controller="productsCtrl">
+  <nav class="navbar navbar-default">
+      <div class="container">
+          <div class="navbar-header">
+              <button type="button" class="navbar-toggle collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+                  <span class="sr-only">Toggle navigation</span>
+                  <span class="icon-bar"></span>
+                  <span class="icon-bar"></span>
+                  <span class="icon-bar"></span>
+              </button>
+              <a class="navbar-brand" href="#">Gestion de stock et d'inventaire</a>
+          </div>
 
 
-    <div ng-controller="addProductController">
-       <form name="addProductForm" ng-submit="addProduct();">
-         <table>
-           <tr>
-              <td>Nom du Produit</td>
-              <td> <input type="text" ng-model="product.nom" required/></td>
-           </tr>
-           <tr>
-              <td>Tag</td>
-              <td> <input type="number" ng-model="product.tag" required/></td>
-           </tr>
-           <tr>
-              <td>Date d'entrée</td>
-              <td> <input type="date" ng-model="product.dateEntree" required/></td>
-           </tr>
-           <tr>
-              <td>Prix d'achat</td>
-              <td> <input type="number" ng-model="product.prixAchat" required/></td>
-           </tr>
-           <tr>
-              <td colspan="2"> <input type="submit" value="Ajouter" ng-disabled="addProductForm.$invalid"></td>
-           </tr>
-         </table>
+      <!-- Collect the nav links, forms, and other content for toggling -->
+         <div class="collapse navbar-collapse" id="bs-example-navbar-collapse">
+             <ul class="nav navbar-nav navbar-right">
+                 <li><a href="#products">Stock</a></li>
+                 <li><a href="#">Inventaire</a></li>
+             </ul>
+         </div><!-- /.navbar-collapse -->
+      </div><!-- /.container-fluid-->
+  </nav>
 
-     <!-- <fieldset>
-            <label for="nom">Nom du produit :</label></br>
-            <input id="nom" type="text" ng-model="nom"></br>
-            <label for="tag">Tag :</label></br>
-            <input id="tag" type="int" ng-model="tag"></br>
-            <label for="dateEntree">Date d'entrée :</label></br>
-            <input id="dateEntree" type="date" ng-model="dateEntree"></br>
-            <label for="prixAchat">Prix d'achat</label></br>
-            <input id="prixAchat" type="double" ng-model="prixAchat"></br>
-            <button type="submit" id="submit">Ajouter</button>
-        </fieldset> -->
-     </form>
-    </div>
-
-    <!--<button ng-click="updateProduct">Modifier</button>
-    <button ng-click="deleteProduct">Supprimer</button> -->
-
-</div>
 
 <div ng-view></div>
 <script src="/webjars/angularjs/1.4.9/angular.js"></script>
 <script src="/webjars/angularjs/1.4.9/angular-resource.js"></script>
 <script src="/webjars/angularjs/1.4.9/angular-route.js"></script>
 <script src="/js/app.js"></script>
-<script src="/js/controller.js"></script>
-<!-- <link rel="stylesheet" href="/webjars/bootstrap/3.3.6/css/bootstrap.css"> -->
+<script src="/js/controllers.js"></script>
+<link rel="stylesheet" href="/webjars/bootstrap/3.3.6/css/bootstrap.css">
+<!--jQuery (necessary for Bootstrap's JavaScript plugins) -->
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+  <!--Include all compiled plugins (below), or include individual files as needed -->
+<script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
 </body>
 </html>

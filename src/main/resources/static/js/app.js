@@ -1,21 +1,30 @@
-var app = angular.module('app', ['ngRoute', 'ngResource']);
+var app = angular.module('app', ['ngRoute', 'controllers']);
 
 app.config(function ($routeProvider) {
     $routeProvider
+        .when('/', {
+            templateUrl: '/views/home.html',
+        })
+
         .when('/products', {
             templateUrl: '/views/products.html',
-            controller: 'productsController'
+            controller: 'productsCtrl'
         })
         .when('/product/:id', {
-            templateUrl: '/views/product.html',
-            controller: 'productController'
+            templateUrl: '/views/productDetail.html',
+            controller: 'productDetailCtrl'
         })
 
+
+
+       /*
         .when('/products', {
             templateUrl: '/views/addProduct.html',
-            controller: 'addProductController'
+            controller: 'addProductCtrl'
 
         })
+        */
+
 
         .otherwise(
             {redirectTo: '/'}
